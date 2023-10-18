@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_prathamesh/colors.dart';
+import 'package:whatsapp_prathamesh/common/utils/colors.dart';
 import 'package:whatsapp_prathamesh/info.dart';
 import 'package:whatsapp_prathamesh/widgets/chat_list.dart';
 import 'package:whatsapp_prathamesh/widgets/web_chat_appbar.dart';
