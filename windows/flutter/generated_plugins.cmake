@@ -3,10 +3,16 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  agora_rtc_engine
+  audioplayers_windows
   cloud_firestore
+  emoji_picker_flutter
   file_selector_windows
   firebase_auth
   firebase_core
+  iris_method_channel
+  permission_handler_windows
+  record_windows
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

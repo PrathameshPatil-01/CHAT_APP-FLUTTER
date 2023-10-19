@@ -1,14 +1,14 @@
+import 'package:chatapp_prathamesh/common/utils/colors.dart';
+import 'package:chatapp_prathamesh/common/widgets/error.dart';
+import 'package:chatapp_prathamesh/common/widgets/loader.dart';
+import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
+import 'package:chatapp_prathamesh/features/landing/screens/landing_screen.dart';
+import 'package:chatapp_prathamesh/firebase_options.dart';
+import 'package:chatapp_prathamesh/mobile_layout_screen.dart';
+import 'package:chatapp_prathamesh/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:whatsapp_prathamesh/common/utils/colors.dart';
-import 'package:whatsapp_prathamesh/common/widgets/error.dart';
-import 'package:whatsapp_prathamesh/common/widgets/loader.dart';
-import 'package:whatsapp_prathamesh/features/auth/controller/auth_controller.dart';
-import 'package:whatsapp_prathamesh/features/landing/screens/landing_screen.dart';
-import 'package:whatsapp_prathamesh/firebase_options.dart';
-import 'package:whatsapp_prathamesh/router.dart';
-import 'package:whatsapp_prathamesh/mobile_layout_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Whatsapp UI',
+      title: 'chataPP',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
         appBarTheme: const AppBarTheme(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_prathamesh/common/utils/colors.dart';
+import 'package:chatapp_prathamesh/common/utils/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: tabColor,
+        backgroundColor: tabColor,
         minimumSize: const Size(double.infinity, 50),
       ),
       child: Text(

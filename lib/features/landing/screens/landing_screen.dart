@@ -1,7 +1,7 @@
+import 'package:chatapp_prathamesh/common/utils/colors.dart';
+import 'package:chatapp_prathamesh/common/widgets/custom_button.dart';
+import 'package:chatapp_prathamesh/features/auth/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp_prathamesh/common/utils/colors.dart';
-import 'package:whatsapp_prathamesh/common/widgets/custom_button.dart';
-import 'package:whatsapp_prathamesh/features/auth/screens/login_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);

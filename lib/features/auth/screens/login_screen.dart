@@ -1,10 +1,10 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:whatsapp_prathamesh/common/utils/colors.dart';
-import 'package:whatsapp_prathamesh/common/utils/utils.dart';
-import 'package:whatsapp_prathamesh/common/widgets/custom_button.dart';
-import 'package:whatsapp_prathamesh/features/auth/controller/auth_controller.dart';
+import 'package:chatapp_prathamesh/common/utils/colors.dart';
+import 'package:chatapp_prathamesh/common/utils/utils.dart';
+import 'package:chatapp_prathamesh/common/widgets/custom_button.dart';
+import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   static const routeName = '/login-screen';
@@ -27,9 +27,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   void pickCountry() {
     showCountryPicker(
         context: context,
-        onSelect: (Country _country) {
+        onSelect: (Country c) {
           setState(() {
-            country = _country;
+            country = c;
           });
         });
   }

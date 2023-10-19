@@ -1,4 +1,4 @@
-# whatsapp_prathamesh
+# chatapp_prathamesh
 
 A new Flutter project.
 
