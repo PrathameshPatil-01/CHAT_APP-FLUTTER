@@ -57,6 +57,7 @@ class _CallScreenState extends ConsumerState<CallScreen> {
                     disconnectButtonChild: IconButton(
                       onPressed: () async {
                         await client!.engine.leaveChannel();
+                        if (!context.mounted) return;
                         ref.read(callControllerProvider).endCall(
                               widget.call.callerId,
                               widget.call.receiverId,

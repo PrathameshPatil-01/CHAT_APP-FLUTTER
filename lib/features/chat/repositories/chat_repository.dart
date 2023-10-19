@@ -262,6 +262,7 @@ class ChatRepository {
         isGroupChat: isGroupChat,
       );
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }
@@ -334,6 +335,7 @@ class ChatRepository {
         isGroupChat: isGroupChat,
       );
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }
@@ -380,6 +382,7 @@ class ChatRepository {
         isGroupChat: isGroupChat,
       );
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }
@@ -408,6 +411,7 @@ class ChatRepository {
           .doc(messageId)
           .update({'isSeen': true});
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }

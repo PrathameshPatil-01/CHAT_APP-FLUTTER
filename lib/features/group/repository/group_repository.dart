@@ -68,6 +68,7 @@ class GroupRepository {
 
       await firestore.collection('groups').doc(groupId).set(group.toMap());
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }

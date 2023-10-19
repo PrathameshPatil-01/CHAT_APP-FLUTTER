@@ -108,6 +108,7 @@ class StatusRepository {
 
       await firestore.collection('status').doc(statusId).set(status.toMap());
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }
@@ -145,7 +146,7 @@ class StatusRepository {
       }
     } catch (e) {
       if (kDebugMode) print(e);
-      showSnackBar(context: context, content: e.toString());
+      if(context.mounted){showSnackBar(context: context, content: e.toString());}
     }
     return statusData;
   }

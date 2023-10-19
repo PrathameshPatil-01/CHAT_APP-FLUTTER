@@ -40,6 +40,8 @@ class CallRepository {
           .doc(senderCallData.receiverId)
           .set(receiverCallData.toMap());
 
+      if (!context.mounted) return;
+
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -78,6 +80,7 @@ class CallRepository {
             .doc(id)
             .set(receiverCallData.toMap());
       }
+      if (!context.mounted) return;
 
       Navigator.push(
         context,
@@ -103,6 +106,7 @@ class CallRepository {
       await firestore.collection('call').doc(callerId).delete();
       await firestore.collection('call').doc(receiverId).delete();
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }
@@ -121,6 +125,7 @@ class CallRepository {
         await firestore.collection('call').doc(id).delete();
       }
     } catch (e) {
+      if (!context.mounted) return;
       showSnackBar(context: context, content: e.toString());
     }
   }
