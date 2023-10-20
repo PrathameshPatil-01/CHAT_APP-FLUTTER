@@ -20,19 +20,6 @@ class MobileLayoutScreen extends ConsumerStatefulWidget {
 
 class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
     with WidgetsBindingObserver, TickerProviderStateMixin {
-  late TabController tabBarController;
-  @override
-  void initState() {
-    super.initState();
-    tabBarController = TabController(length: 3, vsync: this);
-    WidgetsBinding.instance.addObserver(this);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    WidgetsBinding.instance.removeObserver(this);
-  }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -50,20 +37,37 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
     }
   }
 
+
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    ContactsList(),
+    StatusContactsScreen(),
+    Text(
+      'Index 2: Calls',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           elevation: 0,
           backgroundColor: appBarColor,
           centerTitle: false,
           title: const Text(
-            'chataPP',
+            'chatAPP',
             style: TextStyle(
               fontSize: 20,
-              color: Colors.grey,
+              color: Color.fromARGB(255, 0, 0, 0),
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -78,6 +82,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                 color: Colors.grey,
               ),
               itemBuilder: (context) => [
+                if(_selectedIndex == 0)
                 PopupMenuItem(
                   child: const Text(
                     'Create Group',
@@ -87,62 +92,83 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                         context, CreateGroupScreen.routeName),
                   ),
                 )
+                else
+                PopupMenuItem(
+                  child: const Text(
+                    'Settings',
+                  ),
+                  onTap: () {}
+                )
               ],
             ),
           ],
-          bottom: TabBar(
-            controller: tabBarController,
-            indicatorColor: tabColor,
-            indicatorWeight: 4,
-            labelColor: tabColor,
-            unselectedLabelColor: Colors.grey,
-            labelStyle: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-            tabs: const [
-              Tab(
-                text: 'CHATS',
-              ),
-              Tab(
-                text: 'STATUS',
-              ),
-              Tab(
-                text: 'CALLS',
-              ),
-            ],
+        ),
+        body:  _widgetOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_outlined),
+            label: 'CHAT',
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.auto_awesome_outlined),
+            label: 'STATUS',
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_call),
+            label: 'CALLS',
+            backgroundColor: Colors.pink,
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color.fromARGB(255, 0, 0, 0),
+        onTap: _onItemTapped,
+      ),
+
+        floatingActionButton:
+        switch(_selectedIndex){
+          0 => FloatingActionButton(
+          onPressed: () async {
+              Navigator.pushNamed(context, SelectContactsScreen.routeName);
+          },
+          backgroundColor: Colors.white,
+          child: const Icon(
+            Icons.comment,
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
-        body: TabBarView(
-          controller: tabBarController,
-          children: const [
-            ContactsList(),
-            StatusContactsScreen(),
-            Text('Calls')
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
+        1 =>FloatingActionButton(
           onPressed: () async {
-            if (tabBarController.index == 0) {
-              Navigator.pushNamed(context, SelectContactsScreen.routeName);
-            } else {
               File? pickedImage = await pickImageFromGallery(context);
               if (pickedImage != null) {
-                // ignore: use_build_context_synchronously
+                if(!context.mounted) return;
                 Navigator.pushNamed(
                   context,
                   ConfirmStatusScreen.routeName,
                   arguments: pickedImage,
                 );
               }
-            }
           },
-          backgroundColor: tabColor,
+          backgroundColor: Colors.white,
           child: const Icon(
-            Icons.comment,
-            color: Colors.white,
+            Icons.add_a_photo_outlined,
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
-      ),
+        2 =>FloatingActionButton(
+          onPressed: () async {
+
+          },
+          backgroundColor: Colors.white,
+          child: const Icon(
+            Icons.add_call,
+            color: Color.fromARGB(255, 0, 0, 0),
+          ),
+        ),
+          int() => null,
+        }
     );
   }
 }
