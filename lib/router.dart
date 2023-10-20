@@ -9,6 +9,7 @@ import 'package:chatapp_prathamesh/features/group/screens/create_group_screen.da
 import 'package:chatapp_prathamesh/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:chatapp_prathamesh/features/status/screens/confirm_status_screen.dart';
 import 'package:chatapp_prathamesh/features/status/screens/status_screen.dart';
+import 'package:chatapp_prathamesh/features/search/screen/search.dart';
 import 'package:chatapp_prathamesh/models/status_model.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case SelectContactsScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const SelectContactsScreen(),
+      );
+    case SearchList.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SearchList(),
       );
     case MobileChatScreen.routeName:
       final arguments = settings.arguments as Map<String, dynamic>;

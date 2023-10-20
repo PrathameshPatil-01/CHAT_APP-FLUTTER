@@ -5,6 +5,7 @@ import 'package:chatapp_prathamesh/common/utils/utils.dart';
 import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
 import 'package:chatapp_prathamesh/features/chat/widgets/contacts_list.dart';
 import 'package:chatapp_prathamesh/features/group/screens/create_group_screen.dart';
+import 'package:chatapp_prathamesh/features/search/screen/search.dart';
 import 'package:chatapp_prathamesh/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:chatapp_prathamesh/features/status/screens/confirm_status_screen.dart';
 import 'package:chatapp_prathamesh/features/status/screens/status_contacts_screen.dart';
@@ -20,6 +21,7 @@ class MobileLayoutScreen extends ConsumerStatefulWidget {
 
 class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
     with WidgetsBindingObserver, TickerProviderStateMixin {
+  String name = "";
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -36,7 +38,6 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
       case AppLifecycleState.hidden:
     }
   }
-
 
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
@@ -58,7 +59,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
         appBar: AppBar(
           elevation: 0,
           backgroundColor: appBarColor,
@@ -67,14 +68,16 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             'chatAPP',
             style: TextStyle(
               fontSize: 20,
-              color: Color.fromARGB(255, 0, 0, 0),
+              color: Colors.amber,
               fontWeight: FontWeight.bold,
             ),
           ),
           actions: [
             IconButton(
               icon: const Icon(Icons.search, color: Colors.grey),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, SearchList.routeName);
+              },
             ),
             PopupMenuButton(
               icon: const Icon(
@@ -82,93 +85,87 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                 color: Colors.grey,
               ),
               itemBuilder: (context) => [
-                if(_selectedIndex == 0)
-                PopupMenuItem(
-                  child: const Text(
-                    'Create Group',
-                  ),
-                  onTap: () => Future(
-                    () => Navigator.pushNamed(
-                        context, CreateGroupScreen.routeName),
-                  ),
-                )
+                if (_selectedIndex == 0)
+                  PopupMenuItem(
+                    child: const Text(
+                      'Create Group',
+                    ),
+                    onTap: () => Future(
+                      () => Navigator.pushNamed(
+                          context, CreateGroupScreen.routeName),
+                    ),
+                  )
                 else
-                PopupMenuItem(
-                  child: const Text(
-                    'Settings',
-                  ),
-                  onTap: () {}
-                )
+                  PopupMenuItem(
+                      child: const Text(
+                        'Settings',
+                      ),
+                      onTap: () {})
               ],
             ),
           ],
         ),
-        body:  _widgetOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_outlined),
-            label: 'CHAT',
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.auto_awesome_outlined),
-            label: 'STATUS',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_call),
-            label: 'CALLS',
-            backgroundColor: Colors.pink,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: const Color.fromARGB(255, 0, 0, 0),
-        onTap: _onItemTapped,
-      ),
-
-        floatingActionButton:
-        switch(_selectedIndex){
+        body: _widgetOptions.elementAt(_selectedIndex),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat_outlined),
+              label: 'CHAT',
+              backgroundColor: Colors.red,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.auto_awesome_outlined),
+              label: 'STATUS',
+              backgroundColor: Colors.green,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.phone_outlined),
+              label: 'CALLS',
+              backgroundColor: Colors.pink,
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),
+        floatingActionButton: switch (_selectedIndex) {
           0 => FloatingActionButton(
-          onPressed: () async {
-              Navigator.pushNamed(context, SelectContactsScreen.routeName);
-          },
-          backgroundColor: Colors.white,
-          child: const Icon(
-            Icons.comment,
-            color: Color.fromARGB(255, 0, 0, 0),
-          ),
-        ),
-        1 =>FloatingActionButton(
-          onPressed: () async {
-              File? pickedImage = await pickImageFromGallery(context);
-              if (pickedImage != null) {
-                if(!context.mounted) return;
-                Navigator.pushNamed(
-                  context,
-                  ConfirmStatusScreen.routeName,
-                  arguments: pickedImage,
-                );
-              }
-          },
-          backgroundColor: Colors.white,
-          child: const Icon(
-            Icons.add_a_photo_outlined,
-            color: Color.fromARGB(255, 0, 0, 0),
-          ),
-        ),
-        2 =>FloatingActionButton(
-          onPressed: () async {
-
-          },
-          backgroundColor: Colors.white,
-          child: const Icon(
-            Icons.add_call,
-            color: Color.fromARGB(255, 0, 0, 0),
-          ),
-        ),
+              onPressed: () async {
+                Navigator.pushNamed(context, SelectContactsScreen.routeName);
+              },
+              backgroundColor: Colors.white,
+              child: const Icon(
+                Icons.message,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          1 => FloatingActionButton(
+              onPressed: () async {
+                File? pickedImage = await pickImageFromGallery(context);
+                if (pickedImage != null) {
+                  if (!context.mounted) return;
+                  Navigator.pushNamed(
+                    context,
+                    ConfirmStatusScreen.routeName,
+                    arguments: pickedImage,
+                  );
+                }
+              },
+              backgroundColor: Colors.white,
+              child: const Icon(
+                Icons.add_a_photo_outlined,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          2 => FloatingActionButton(
+              onPressed: () async {},
+              backgroundColor: Colors.white,
+              child: const Icon(
+                Icons.add_call,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
           int() => null,
-        }
-    );
+        });
   }
 }
