@@ -1,13 +1,24 @@
 import 'package:chatapp_prathamesh/common/widgets/error.dart';
 import 'package:chatapp_prathamesh/common/widgets/loader.dart';
 import 'package:chatapp_prathamesh/features/select_contacts/controller/select_contact_controller.dart';
+import 'package:chatapp_prathamesh/features/group/screens/create_group_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/contact.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SelectContactsScreen extends ConsumerWidget {
+class SelectContactsScreen extends ConsumerStatefulWidget {
   static const String routeName = '/select-contact';
   const SelectContactsScreen({Key? key}) : super(key: key);
+
+  @override
+  ConsumerState<SelectContactsScreen> createState() {
+    return SelectContactsScreenState();
+  }
+}
+
+class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
+  String name = "";
+  bool isSearch = false;
 
   void selectContact(
       WidgetRef ref, Contact selectedContact, BuildContext context) {
@@ -17,54 +28,122 @@ class SelectContactsScreen extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Select contact'),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
+      appBar: isSearch
+          ? AppBar(
+              title: Card(
+                child: TextField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.search), hintText: 'Search...'),
+                  onChanged: (val) {
+                    setState(() {
+                      name = val;
+                    });
+                  },
+                ),
+              ),
+            )
+          : AppBar(
+              title: const Text('Select contact'),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.search, color: Colors.grey),
+                  onPressed: () {
+                    setState(() {
+                      isSearch = !isSearch;
+                    });
+                  },
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.more_vert,
+                  ),
+                ),
+              ],
             ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert,
-            ),
-          ),
-        ],
-      ),
       body: ref.watch(getContactsProvider).when(
             data: (contactList) => ListView.builder(
                 itemCount: contactList.length,
                 itemBuilder: (context, index) {
                   final contact = contactList[index];
-                  return InkWell(
-                    onTap: () => selectContact(ref, contact, context),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: ListTile(
-                        title: Text(
-                          contact.displayName,
-                          style: const TextStyle(
-                            fontSize: 18,
+                  if (name.isEmpty) {
+                    return InkWell(
+                      onTap: () => selectContact(ref, contact, context),
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: ListTile(
+                          title: Text(
+                            contact.displayName,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
                           ),
+                          leading: contact.photo == null
+                              ? const Icon(
+                                  Icons.person_outline_sharp,
+                                )
+                              : CircleAvatar(
+                                  backgroundImage: MemoryImage(contact.photo!),
+                                  radius: 30,
+                                ),
                         ),
-                        leading: contact.photo == null
-                            ? null
-                            : CircleAvatar(
-                                backgroundImage: MemoryImage(contact.photo!),
-                                radius: 30,
-                              ),
                       ),
-                    ),
-                  );
+                    );
+                  }
+
+                  if (contact.displayName
+                      .toString()
+                      .toLowerCase()
+                      .contains(name.toLowerCase())) {
+                    return InkWell(
+                      onTap: () => selectContact(ref, contact, context),
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: ListTile(
+                          title: Text(
+                            contact.displayName,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                          leading: contact.photo == null
+                              ? null
+                              : CircleAvatar(
+                                  backgroundImage: MemoryImage(contact.photo!),
+                                  radius: 30,
+                                ),
+                        ),
+                      ),
+                    );
+                  }
+                  return Container();
                 }),
             error: (err, trace) => ErrorScreen(error: err.toString()),
             loading: () => const Loader(),
           ),
+      persistentFooterButtons: [
+        InkWell(
+          onTap: () => Future(
+            () => Navigator.pushNamed(context, CreateGroupScreen.routeName),
+          ),
+          child: const Padding(
+            padding: EdgeInsets.only(bottom: 8.0),
+            child: ListTile(
+              title: Text(
+                "Create Group",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+              leading: Icon(
+                Icons.group_add_outlined,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

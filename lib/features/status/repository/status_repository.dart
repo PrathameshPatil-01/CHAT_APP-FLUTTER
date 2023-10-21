@@ -66,7 +66,7 @@ class StatusRepository {
             .get();
 
         if (userDataFirebase.docs.isNotEmpty) {
-          var userData = UserModel.fromMap(userDataFirebase.docs[0].data());
+          var userData = UserModel.fromMap(userDataFirebase.docs.first.data());
           uidWhoCanSee.add(userData.uid);
         }
       }
@@ -130,12 +130,12 @@ class StatusRepository {
                     '',
                   ),
             )
-            .where(
-              'createdAt',
-              isGreaterThan: DateTime.now()
-                  .subtract(const Duration(hours: 24))
-                  .millisecondsSinceEpoch,
-            )
+            // .where(
+            //   'createdAt',
+            //   isGreaterThan: DateTime.now()
+            //       .subtract(const Duration(hours: 24))
+            //       .millisecondsSinceEpoch,
+            // )
             .get();
         for (var tempData in statusesSnapshot.docs) {
           Status tempStatus = Status.fromMap(tempData.data());
