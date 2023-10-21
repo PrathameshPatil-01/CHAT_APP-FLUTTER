@@ -26,6 +26,13 @@ class CallPickupScreen extends ConsumerWidget {
               body: Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(vertical: 20),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.blue, Colors.teal],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                  ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -36,16 +43,16 @@ class CallPickupScreen extends ConsumerWidget {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 70),
                     CircleAvatar(
                       backgroundImage: NetworkImage(call.callerPic),
-                      radius: 60,
+                      radius: 150,
                     ),
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 70),
                     Text(
                       call.callerName,
                       style: const TextStyle(
-                        fontSize: 25,
+                        fontSize: 40,
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
                       ),
@@ -55,11 +62,16 @@ class CallPickupScreen extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                           icon: const Icon(Icons.call_end,
-                              color: Colors.redAccent),
+                              color: Colors.redAccent,
+                              size: 60,
+                              ),
+
                         ),
-                        const SizedBox(width: 25),
+                        const SizedBox(width: 100),
                         IconButton(
                           onPressed: () {
                             Navigator.push(
@@ -76,6 +88,7 @@ class CallPickupScreen extends ConsumerWidget {
                           icon: const Icon(
                             Icons.call,
                             color: Colors.green,
+                            size: 60,
                           ),
                         ),
                       ],

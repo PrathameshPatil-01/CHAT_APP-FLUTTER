@@ -45,10 +45,16 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
               ),
             )
           : AppBar(
-              title: const Text('Select contact'),
+              title: Text(
+                'Select contact',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
               actions: [
                 IconButton(
-                  icon: const Icon(Icons.search, color: Colors.grey),
+                  icon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
                   onPressed: () {
                     setState(() {
                       isSearch = !isSearch;
@@ -76,9 +82,7 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
                         child: ListTile(
                           title: Text(
                             contact.displayName,
-                            style: const TextStyle(
-                              fontSize: 18,
-                            ),
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
                           leading: contact.photo == null
                               ? const Icon(
@@ -104,9 +108,7 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
                         child: ListTile(
                           title: Text(
                             contact.displayName,
-                            style: const TextStyle(
-                              fontSize: 18,
-                            ),
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
                           leading: contact.photo == null
                               ? null
@@ -128,16 +130,14 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
           onTap: () => Future(
             () => Navigator.pushNamed(context, CreateGroupScreen.routeName),
           ),
-          child: const Padding(
-            padding: EdgeInsets.only(bottom: 8.0),
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
             child: ListTile(
               title: Text(
                 "Create Group",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.group_add_outlined,
               ),
             ),

@@ -1,4 +1,3 @@
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/common/widgets/loader.dart';
 import 'package:chatapp_prathamesh/features/status/controller/status_controller.dart';
 import 'package:chatapp_prathamesh/features/status/screens/status_screen.dart';
@@ -35,6 +34,7 @@ class StatusContactsScreen extends ConsumerWidget {
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: ListTile(
                       title: Text(
+                        style: Theme.of(context).textTheme.titleSmall,
                         statusData.username,
                       ),
                       leading: CircleAvatar(
@@ -46,7 +46,8 @@ class StatusContactsScreen extends ConsumerWidget {
                     ),
                   ),
                 ),
-                const Divider(color: dividerColor, indent: 85),
+                Divider(
+                    color: Theme.of(context).colorScheme.tertiary, indent: 85),
               ],
             );
           },

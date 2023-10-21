@@ -1,4 +1,3 @@
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/common/widgets/loader.dart';
 import 'package:chatapp_prathamesh/features/chat/controller/chat_controller.dart';
 import 'package:chatapp_prathamesh/features/chat/screens/mobile_chat_screen.dart';
@@ -51,15 +50,14 @@ class ContactsList extends ConsumerWidget {
                               child: ListTile(
                                 title: Text(
                                   groupData.name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                  ),
+                                  style: Theme.of(context).textTheme.titleSmall,
                                 ),
                                 subtitle: Padding(
                                   padding: const EdgeInsets.only(top: 6.0),
                                   child: Text(
                                     groupData.lastMessage,
-                                    style: const TextStyle(fontSize: 15),
+                                    style:
+                                        Theme.of(context).textTheme.bodyMedium,
                                   ),
                                 ),
                                 leading: CircleAvatar(
@@ -70,15 +68,14 @@ class ContactsList extends ConsumerWidget {
                                 ),
                                 trailing: Text(
                                   DateFormat.Hm().format(groupData.timeSent),
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 13,
-                                  ),
+                                  style: Theme.of(context).textTheme.bodySmall,
                                 ),
                               ),
                             ),
                           ),
-                          const Divider(color: dividerColor, indent: 85),
+                          Divider(
+                              color: Theme.of(context).colorScheme.tertiary,
+                              indent: 85),
                         ],
                       );
                     },
@@ -117,15 +114,14 @@ class ContactsList extends ConsumerWidget {
                               child: ListTile(
                                 title: Text(
                                   chatContactData.name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                  ),
+                                  style: Theme.of(context).textTheme.titleSmall,
                                 ),
                                 subtitle: Padding(
                                   padding: const EdgeInsets.only(top: 6.0),
                                   child: Text(
                                     chatContactData.lastMessage,
-                                    style: const TextStyle(fontSize: 15),
+                                    style:
+                                        Theme.of(context).textTheme.bodyMedium,
                                   ),
                                 ),
                                 leading: CircleAvatar(
@@ -137,15 +133,14 @@ class ContactsList extends ConsumerWidget {
                                 trailing: Text(
                                   DateFormat.Hm()
                                       .format(chatContactData.timeSent),
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 13,
-                                  ),
+                                  style: Theme.of(context).textTheme.bodySmall,
                                 ),
                               ),
                             ),
                           ),
-                          const Divider(color: dividerColor, indent: 85),
+                          Divider(
+                              color: Theme.of(context).colorScheme.tertiary,
+                              indent: 85),
                         ],
                       );
                     },

@@ -1,4 +1,4 @@
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
+import 'package:chatapp_prathamesh/chatapptheme.dart';
 import 'package:chatapp_prathamesh/common/widgets/error.dart';
 import 'package:chatapp_prathamesh/common/widgets/loader.dart';
 import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
@@ -31,12 +31,9 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'chatAPP',
-      theme: ThemeData.dark(useMaterial3: true).copyWith(
-        scaffoldBackgroundColor: backgroundColor,
-        appBarTheme: const AppBarTheme(
-          color: appBarColor,
-        ),
-      ),
+      theme: ChatAppTheme.lightTheme,
+      darkTheme: ChatAppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       onGenerateRoute: (settings) => generateRoute(settings),
       home: ref.watch(userDataAuthProvider).when(
             data: (user) {

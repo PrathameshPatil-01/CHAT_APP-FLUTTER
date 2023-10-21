@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:chatapp_prathamesh/common/enums/message_enum.dart';
 import 'package:chatapp_prathamesh/common/providers/message_reply_provider.dart';
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/common/utils/utils.dart';
 import 'package:chatapp_prathamesh/features/chat/controller/chat_controller.dart';
 import 'package:chatapp_prathamesh/features/chat/widgets/message_reply_preview.dart';
@@ -53,12 +52,14 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
 
   void sendTextMessage() async {
     if (isShowSendButton) {
+      if(_messageController.text.trim()!=""){
       ref.read(chatControllerProvider).sendTextMessage(
             context,
             _messageController.text.trim(),
             widget.recieverUserId,
             widget.isGroupChat,
           );
+          }
       setState(() {
         _messageController.text = '';
       });
@@ -182,25 +183,29 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: mobileChatBoxColor,
+                  fillColor: Theme.of(context).colorScheme.primaryContainer,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: SizedBox(
                       width: 100,
                       child: Row(
                         children: [
                           IconButton(
                             onPressed: toggleEmojiKeyboardContainer,
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.emoji_emotions,
-                              color: Colors.grey,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                           IconButton(
                             onPressed: selectGIF,
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.gif,
-                              color: Colors.grey,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ],
@@ -214,16 +219,20 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                       children: [
                         IconButton(
                           onPressed: selectImage,
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.camera_alt,
-                            color: Colors.grey,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onPrimaryContainer,
                           ),
                         ),
                         IconButton(
                           onPressed: selectVideo,
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.attach_file,
-                            color: Colors.grey,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onPrimaryContainer,
                           ),
                         ),
                       ],
@@ -234,10 +243,10 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                     borderRadius: BorderRadius.circular(20.0),
                     borderSide: const BorderSide(
                       width: 0,
-                      style: BorderStyle.none,
+                      style: BorderStyle.solid,
                     ),
                   ),
-                  contentPadding: const EdgeInsets.all(10),
+                  contentPadding: const EdgeInsets.all(13),
                 ),
               ),
             ),
@@ -248,8 +257,8 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                 left: 2,
               ),
               child: CircleAvatar(
-                backgroundColor: const Color(0xFF128C7E),
-                radius: 25,
+                backgroundColor: Theme.of(context).colorScheme.tertiary,
+                radius: 30,
                 child: GestureDetector(
                   onTap: sendTextMessage,
                   child: Icon(
@@ -258,7 +267,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                         : isRecording
                             ? Icons.close
                             : Icons.mic,
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.onTertiary,
                   ),
                 ),
               ),

@@ -1,4 +1,3 @@
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/common/widgets/loader.dart';
 import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
 import 'package:chatapp_prathamesh/features/call/controller/call_controller.dart';
@@ -38,24 +37,44 @@ class MobileChatScreen extends ConsumerWidget {
     return CallPickupScreen(
       scaffold: Scaffold(
         appBar: AppBar(
-          backgroundColor: appBarColor,
+          foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           title: isGroupChat
-              ? Text(name)
+              ? Text(name,
+              style: Theme.of(context).textTheme.titleMedium,
+              )
               : StreamBuilder<UserModel>(
                   stream: ref.read(authControllerProvider).userDataById(uid),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Loader();
                     }
-                    return Column(
+                    return Row(
                       children: [
-                        Text(name),
-                        Text(
-                          snapshot.data!.isOnline ? 'online' : 'offline',
-                          style: const TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.normal,
-                          ),
+                        Column(
+                          children: [
+                            Text(
+                              snapshot.data!.isOnline ? '🙂' : '😴',
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                            Text(
+                              snapshot.data!.isOnline ? 'online' : 'offline',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.onPrimary,
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 18,
+                        ),
+                        Text(name,
+                        style: Theme.of(context).textTheme.titleMedium,
                         ),
                       ],
                     );
@@ -63,14 +82,17 @@ class MobileChatScreen extends ConsumerWidget {
           centerTitle: false,
           actions: [
             IconButton(
+              color: Theme.of(context).colorScheme.onPrimary,
               onPressed: () => makeCall(ref, context),
-              icon: const Icon(Icons.video_call),
+              icon: const Icon(Icons.videocam),
             ),
             IconButton(
+              color: Theme.of(context).colorScheme.onPrimary,
               onPressed: () {},
               icon: const Icon(Icons.call),
             ),
             IconButton(
+              color: Theme.of(context).colorScheme.onPrimary,
               onPressed: () {},
               icon: const Icon(Icons.more_vert),
             ),

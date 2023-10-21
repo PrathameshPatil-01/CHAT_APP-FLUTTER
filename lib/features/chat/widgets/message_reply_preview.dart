@@ -15,14 +15,12 @@ class MessageReplyPreview extends ConsumerWidget {
     final messageReply = ref.watch(messageReplyProvider);
 
     return Container(
-      width: 350,
-      padding: const EdgeInsets.all(8),
-      decoration: const BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
-        ),
+      margin: const EdgeInsets.fromLTRB(0,0,60,0),
+      width: 330,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primary,
+        borderRadius: BorderRadius.circular(20.0),
       ),
       child: Column(
         children: [

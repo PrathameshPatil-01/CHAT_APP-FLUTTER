@@ -37,6 +37,7 @@ class OTPScreen extends ConsumerWidget {
             SizedBox(
               width: size.width * 0.5,
               child: TextField(
+                keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   hintText: '- - - - - -',
@@ -44,7 +45,6 @@ class OTPScreen extends ConsumerWidget {
                     fontSize: 30,
                   ),
                 ),
-                keyboardType: TextInputType.number,
                 onChanged: (val) {
                   if (val.length == 6) {
                     verifyOTP(ref, context, val.trim());

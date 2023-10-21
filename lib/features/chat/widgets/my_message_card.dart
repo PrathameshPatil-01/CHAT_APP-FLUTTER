@@ -1,5 +1,4 @@
 import 'package:chatapp_prathamesh/common/enums/message_enum.dart';
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/features/chat/widgets/display_text_image_gif.dart';
 import 'package:flutter/material.dart';
 import 'package:swipe_to/swipe_to.dart';
@@ -39,20 +38,20 @@ class MyMessageCard extends StatelessWidget {
             maxWidth: MediaQuery.of(context).size.width - 45,
           ),
           child: Card(
-            elevation: 1,
+            elevation: 15,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            color: messageColor,
-            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            color: Theme.of(context).colorScheme.primary,
+            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
             child: Stack(
               children: [
                 Padding(
                   padding: type == MessageEnum.text
                       ? const EdgeInsets.only(
-                          left: 10,
+                          left: 20,
                           right: 30,
                           top: 5,
-                          bottom: 20,
+                          bottom: 30,
                         )
                       : const EdgeInsets.only(
                           left: 5,
@@ -65,15 +64,13 @@ class MyMessageCard extends StatelessWidget {
                       if (isReplying) ...[
                         Text(
                           username,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                         const SizedBox(height: 3),
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: backgroundColor.withOpacity(0.5),
+                            color:Theme.of(context).colorScheme.background.withOpacity(0.5),
                             borderRadius: const BorderRadius.all(
                               Radius.circular(
                                 5,
@@ -96,18 +93,18 @@ class MyMessageCard extends StatelessWidget {
                 ),
                 Positioned(
                   bottom: 4,
-                  right: 10,
+                  right: 5,
                   child: Row(
                     children: [
                       Text(
                         date,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          color: Colors.white60,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
                       const SizedBox(
-                        width: 5,
+                        width: 3,
                       ),
                       Icon(
                         isSeen ? Icons.done_all : Icons.done,

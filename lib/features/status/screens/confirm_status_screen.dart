@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/features/status/controller/status_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,10 +28,10 @@ class ConfirmStatusScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => addStatus(ref, context),
-        backgroundColor: tabColor,
-        child: const Icon(
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
+        child: Icon(
           Icons.done,
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.onTertiary,
         ),
       ),
     );

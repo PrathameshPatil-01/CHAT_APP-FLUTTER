@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/common/utils/utils.dart';
 import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
 import 'package:chatapp_prathamesh/features/chat/widgets/contacts_list.dart';
@@ -40,15 +39,10 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   }
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   static const List<Widget> _widgetOptions = <Widget>[
     ContactsList(),
     StatusContactsScreen(),
-    Text(
-      'Index 2: Calls',
-      style: optionStyle,
-    ),
   ];
 
   void _onItemTapped(int index) {
@@ -61,32 +55,31 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: appBarColor,
+          elevation: 30,
+          foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           centerTitle: false,
-          title: const Text(
+          title: Text(
             'chatAPP',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.amber,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.search, color: Colors.grey),
+              icon: Icon(Icons.search,
+                  color: Theme.of(context).colorScheme.onPrimary),
               onPressed: () {
                 Navigator.pushNamed(context, SearchList.routeName);
               },
             ),
             PopupMenuButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.more_vert,
-                color: Colors.grey,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
               itemBuilder: (context) => [
                 if (_selectedIndex == 0)
                   PopupMenuItem(
+                    textStyle: Theme.of(context).textTheme.titleMedium,
                     child: const Text(
                       'Create Group',
                     ),
@@ -97,6 +90,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                   )
                 else
                   PopupMenuItem(
+                      textStyle: Theme.of(context).textTheme.bodySmall,
                       child: const Text(
                         'Settings',
                       ),
@@ -106,40 +100,62 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
           ],
         ),
         body: _widgetOptions.elementAt(_selectedIndex),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.chat_outlined),
-              label: 'CHAT',
-              backgroundColor: Colors.red,
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 10,
+          color: Theme.of(context).colorScheme.primary,
+          child: IconTheme(
+            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+            child: Row(
+              children: <Widget>[
+                IconButton(
+                  iconSize: 30,
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  tooltip: 'CHAT',
+                  icon: Icon(Icons.chat_outlined,
+                      color: _selectedIndex == 0
+                          ? const Color.fromARGB(255, 0, 0, 0)
+                          : Theme.of(context).colorScheme.onPrimary),
+                  onPressed: () {
+                    _onItemTapped(0);
+                  },
+                ),
+                const Spacer(),
+                IconButton(
+                  iconSize: 30,
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  tooltip: 'Status',
+                  icon: Icon(Icons.auto_awesome_sharp,
+                      color: _selectedIndex == 1
+                          ? const Color.fromARGB(255, 0, 0, 0)
+                          : Theme.of(context).colorScheme.onPrimary),
+                  onPressed: () {
+                    _onItemTapped(1);
+                  },
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.auto_awesome_outlined),
-              label: 'STATUS',
-              backgroundColor: Colors.green,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.phone_outlined),
-              label: 'CALLS',
-              backgroundColor: Colors.pink,
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.amber[800],
-          onTap: _onItemTapped,
+          ),
         ),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.miniCenterDocked,
         floatingActionButton: switch (_selectedIndex) {
-          0 => FloatingActionButton(
+          0 => FloatingActionButton.large(
+              shape: Theme.of(context).floatingActionButtonTheme.shape,
+              elevation: Theme.of(context).floatingActionButtonTheme.elevation,
               onPressed: () async {
                 Navigator.pushNamed(context, SelectContactsScreen.routeName);
               },
-              backgroundColor: Colors.white,
-              child: const Icon(
-                Icons.message,
-                color: Color.fromARGB(255, 0, 0, 0),
+              backgroundColor:
+                  Theme.of(context).floatingActionButtonTheme.backgroundColor,
+              child: Icon(
+                Icons.add_circle_outline_sharp,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
-          1 => FloatingActionButton(
+          1 => FloatingActionButton.large(
+              shape: Theme.of(context).floatingActionButtonTheme.shape,
+              elevation: Theme.of(context).floatingActionButtonTheme.elevation,
               onPressed: () async {
                 File? pickedImage = await pickImageFromGallery(context);
                 if (pickedImage != null) {
@@ -151,18 +167,11 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                   );
                 }
               },
-              backgroundColor: Colors.white,
-              child: const Icon(
+              backgroundColor:
+                  Theme.of(context).floatingActionButtonTheme.backgroundColor,
+              child: Icon(
                 Icons.add_a_photo_outlined,
-                color: Color.fromARGB(255, 0, 0, 0),
-              ),
-            ),
-          2 => FloatingActionButton(
-              onPressed: () async {},
-              backgroundColor: Colors.white,
-              child: const Icon(
-                Icons.add_call,
-                color: Color.fromARGB(255, 0, 0, 0),
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
           int() => null,
