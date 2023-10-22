@@ -5,72 +5,67 @@ class ChatAppTheme {
   static final ThemeData lightTheme = ThemeData().copyWith(
     // General
     useMaterial3: true,
-    scaffoldBackgroundColor: const Color.fromARGB(255, 252, 236, 221),
-
+    scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
+    
     // AppBar
     appBarTheme: const AppBarTheme(
-      color: Color.fromARGB(232, 226, 148, 148),
-      foregroundColor: Colors.teal,
-      iconTheme: IconThemeData(
-        color: Color.fromARGB(255, 0, 0, 0),
-      ),
+      backgroundColor: Color.fromARGB(255, 255, 46, 99),
+      foregroundColor: Color.fromARGB(255, 0, 0, 0),
     ),
 
     // Color Scheme
     colorScheme: const ColorScheme.light(
-      background: Colors.cyan,
-      primary: Color.fromARGB(255, 255, 194, 136),
+      background: Color.fromARGB(255, 180, 219, 231),
+      primary: Color.fromARGB(223, 8, 217, 214),
       onPrimary: Color.fromARGB(255, 255, 255, 255),
-      primaryContainer: Color.fromARGB(255, 77, 76, 76),
-      onPrimaryContainer: Colors.amberAccent,
-      secondary: Color.fromARGB(255, 0, 0, 0),
-      onSecondary: Color.fromARGB(255, 255, 140, 46),
-      tertiary: Color.fromARGB(255, 239, 48, 48),
-      onTertiary: Colors.purple,
-    ),
-
-    // Card Theme
-    cardTheme: const CardTheme(
-      shape: LinearBorder(),
-      margin: EdgeInsets.all(5),
-      surfaceTintColor: Colors.pinkAccent,
-      elevation: 15,
-      color: Color.fromARGB(255, 242, 189, 114),
-    ),
-
-    // Icon Theme
-    iconTheme: const IconThemeData(
-      color: Color.fromARGB(255, 0, 0, 0),
+      primaryContainer: Color.fromARGB(255, 255, 255, 255),
+      onPrimaryContainer: Color.fromARGB(255, 0, 0, 0),
+      secondary: Color.fromARGB(255, 255, 255, 255),
+      onSecondary: Color.fromARGB(255, 0, 0, 0),
+      tertiary: Color.fromARGB(255, 255, 46, 99),
+      onTertiary: Color.fromARGB(255, 255, 254, 255),
     ),
 
     // Text Theme
     textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color.fromARGB(255, 0, 0, 0),
+        fontSize: 24.0,
+      ),
       titleMedium: TextStyle(
         fontWeight: FontWeight.bold,
         color: Color.fromRGBO(0, 0, 0, 1),
         fontSize: 22.0,
       ),
+      titleSmall: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontSize: 20.0,
+      ),
+      bodyLarge: TextStyle(
+        color: Color.fromARGB(179, 0, 0, 0),
+        fontSize: 18.0,
+      ),
       bodyMedium: TextStyle(
-        color: Colors.black,
+        color: Color.fromRGBO(0, 0, 0, 1),
         fontSize: 16.0,
       ),
+      bodySmall: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontSize: 14.0,
+      ),
     ),
-
-    // Elevated Button Theme
-    elevatedButtonTheme: const ElevatedButtonThemeData(
-        style: ButtonStyle(
-      backgroundColor:
-          MaterialStatePropertyAll(Color.fromARGB(255, 254, 167, 47)),
-    )),
+    
 
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color.fromARGB(255, 8, 217, 214),
       elevation: 20,
       iconSize: 40,
       shape: CircleBorder(),
     ),
 
-    // Add more properties as needed for specific elements
   );
 
   // Dark Theme
@@ -100,39 +95,37 @@ class ChatAppTheme {
       onTertiary: Colors.lightBlue,
     ),
 
-    // Card Theme
-    cardTheme: const CardTheme(
-      shape: LinearBorder(),
-      margin: EdgeInsets.all(5),
-      surfaceTintColor: Colors.pinkAccent,
-      elevation: 15,
-      color: Color.fromARGB(255, 242, 189, 114),
-    ),
-
-    // Icon Theme
-    iconTheme: const IconThemeData(
-      color: Color.fromARGB(255, 0, 173, 181),
-    ),
-
     // Text Theme
     textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color.fromARGB(255, 0, 0, 0),
+        fontSize: 24.0,
+      ),
       titleMedium: TextStyle(
         fontWeight: FontWeight.bold,
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: Color.fromRGBO(0, 0, 0, 1),
         fontSize: 22.0,
       ),
+      titleSmall: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontSize: 20.0,
+      ),
+      bodyLarge: TextStyle(
+        color: Color.fromARGB(179, 0, 0, 0),
+        fontSize: 18.0,
+      ),
       bodyMedium: TextStyle(
-        color: Color.fromARGB(179, 255, 255, 255),
+        color: Color.fromRGBO(0, 0, 0, 1),
         fontSize: 16.0,
       ),
+      bodySmall: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontSize: 14.0,
+      ),
     ),
-
-    // Elevated Button Theme
-    elevatedButtonTheme: const ElevatedButtonThemeData(
-        style: ButtonStyle(
-      backgroundColor:
-          MaterialStatePropertyAll(Color.fromARGB(255, 0, 173, 181)),
-    )),
 
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color.fromARGB(31, 77, 62, 62),

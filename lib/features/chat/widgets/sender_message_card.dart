@@ -39,16 +39,16 @@ class SenderMessageCard extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             color: Theme.of(context).colorScheme.secondary,
-            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
             child: Stack(
               children: [
                 Padding(
                   padding: type == MessageEnum.text
                       ? const EdgeInsets.only(
-                          left: 20,
-                          right: 30,
+                          left: 10,
+                          right: 20,
                           top: 5,
-                          bottom: 30,
+                          bottom: 28,
                         )
                       : const EdgeInsets.only(
                           left: 5,
@@ -61,8 +61,9 @@ class SenderMessageCard extends StatelessWidget {
                       if (isReplying) ...[
                         Text(
                           username,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            color: Theme.of(context).colorScheme.onSecondary,
                           ),
                         ),
                         const SizedBox(height: 3),
@@ -96,7 +97,7 @@ class SenderMessageCard extends StatelessWidget {
                   child: Text(
                     date,
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 10,
                       color: Theme.of(context).colorScheme.onSecondary,
                     ),
                   ),

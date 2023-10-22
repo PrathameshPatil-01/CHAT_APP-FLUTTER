@@ -55,12 +55,11 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 30,
           foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           centerTitle: false,
           title: Text(
-            'chatAPP',
+            'ChatApp',
             style: Theme.of(context).textTheme.titleMedium,
           ),
           actions: [
@@ -109,7 +108,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             child: Row(
               children: <Widget>[
                 IconButton(
-                  iconSize: 30,
+                  iconSize: 25,
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   tooltip: 'CHAT',
                   icon: Icon(Icons.chat_outlined,
@@ -122,7 +121,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                 ),
                 const Spacer(),
                 IconButton(
-                  iconSize: 30,
+                  iconSize: 25,
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   tooltip: 'Status',
                   icon: Icon(Icons.auto_awesome_sharp,

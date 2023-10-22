@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'chatAPP',
+      title: 'ChatApp',
       theme: ChatAppTheme.lightTheme,
       darkTheme: ChatAppTheme.darkTheme,
       themeMode: ThemeMode.system,

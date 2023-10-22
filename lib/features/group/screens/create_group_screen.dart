@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
 import 'package:chatapp_prathamesh/common/utils/utils.dart';
 import 'package:chatapp_prathamesh/features/group/controller/group_controller.dart';
 import 'package:chatapp_prathamesh/features/group/widgets/select_contacts_group.dart';
@@ -92,12 +91,9 @@ class _CreateGroupScreenState extends ConsumerState<CreateGroupScreen> {
             Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.all(8),
-              child: const Text(
+              child: Text(
                 'Select Contacts',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
             const SelectContactsGroup(),
@@ -106,10 +102,10 @@ class _CreateGroupScreenState extends ConsumerState<CreateGroupScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: createGroup,
-        backgroundColor: tabColor,
-        child: const Icon(
+        backgroundColor: Theme.of(context).floatingActionButtonTheme.backgroundColor,
+        child: Icon(
           Icons.done,
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.onPrimary,
         ),
       ),
     );

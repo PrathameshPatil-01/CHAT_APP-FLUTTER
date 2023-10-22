@@ -53,9 +53,13 @@ class DisplayTextImageGIF extends StatelessWidget {
                   )
                 : type == MessageEnum.gif
                     ? CachedNetworkImage(
+                        height:150,
+                        width: 150,
                         imageUrl: message,
                       )
                     : CachedNetworkImage(
+                        height:150,
+                        width: 150,
                         imageUrl: message,
                       );
   }

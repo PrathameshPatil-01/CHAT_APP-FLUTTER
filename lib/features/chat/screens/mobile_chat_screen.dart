@@ -40,23 +40,29 @@ class MobileChatScreen extends ConsumerWidget {
           foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           title: isGroupChat
-              ? Text(name,
-              style: Theme.of(context).textTheme.titleMedium,
-              )
+              ? Text(
+                  name,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
               : StreamBuilder<UserModel>(
                   stream: ref.read(authControllerProvider).userDataById(uid),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Loader();
                     }
-                    return Row(
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
+                        Text(
+                          name,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        Row(
                           children: [
                             Text(
                               snapshot.data!.isOnline ? '🙂' : '😴',
                               style: const TextStyle(
-                                fontSize: 17,
+                                fontSize: 12,
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
@@ -64,17 +70,11 @@ class MobileChatScreen extends ConsumerWidget {
                               snapshot.data!.isOnline ? 'online' : 'offline',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.onPrimary,
-                                fontSize: 12,
+                                fontSize: 10,
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
                           ],
-                        ),
-                        const SizedBox(
-                          width: 18,
-                        ),
-                        Text(name,
-                        style: Theme.of(context).textTheme.titleMedium,
                         ),
                       ],
                     );
@@ -98,19 +98,27 @@ class MobileChatScreen extends ConsumerWidget {
             ),
           ],
         ),
-        body: Column(
-          children: [
-            Expanded(
-              child: ChatList(
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/background.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Column(
+            children: [
+              Expanded(
+                child: ChatList(
+                  recieverUserId: uid,
+                  isGroupChat: isGroupChat,
+                ),
+              ),
+              BottomChatField(
                 recieverUserId: uid,
                 isGroupChat: isGroupChat,
               ),
-            ),
-            BottomChatField(
-              recieverUserId: uid,
-              isGroupChat: isGroupChat,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
