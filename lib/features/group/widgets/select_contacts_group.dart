@@ -54,7 +54,7 @@ class _SelectContactsGroupState extends ConsumerState<SelectContactsGroup> {
                                 onPressed: () {},
                                 icon: const Icon(Icons.done),
                               )
-                            : null,
+                            : const Icon(Icons.account_circle),
                       ),
                     ),
                   );

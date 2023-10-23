@@ -43,6 +43,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   static const List<Widget> _widgetOptions = <Widget>[
     ContactsList(),
     StatusContactsScreen(),
+    Text("great"),
   ];
 
   void _onItemTapped(int index) {
@@ -55,91 +56,105 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
-          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-          centerTitle: false,
-          title: Text(
-            'ChatApp',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search,
-                  color: Theme.of(context).colorScheme.onPrimary),
-              onPressed: () {
-                Navigator.pushNamed(context, SearchList.routeName);
-              },
+            foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+            centerTitle: false,
+            title: Text(
+              'ChatApp',
+              style: Theme.of(context).textTheme.titleMedium,
             ),
-            PopupMenuButton(
-              icon: Icon(
-                Icons.more_vert,
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-              itemBuilder: (context) => [
-                if (_selectedIndex == 0)
-                  PopupMenuItem(
-                    textStyle: Theme.of(context).textTheme.titleMedium,
-                    child: const Text(
-                      'Create Group',
+            actions: switch (_selectedIndex) {
+              0 => [
+                  IconButton(
+                    icon: Icon(Icons.search,
+                        color: Theme.of(context).colorScheme.onPrimary),
+                    onPressed: () {
+                      Navigator.pushNamed(context, SearchList.routeName);
+                    },
+                  ),
+                  PopupMenuButton(
+                    icon: Icon(
+                      Icons.more_vert,
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
-                    onTap: () => Future(
-                      () => Navigator.pushNamed(
-                          context, CreateGroupScreen.routeName),
-                    ),
-                  )
-                else
-                  PopupMenuItem(
-                      textStyle: Theme.of(context).textTheme.bodySmall,
-                      child: const Text(
-                        'Settings',
+                    itemBuilder: (context) => [
+                      PopupMenuItem(
+                        textStyle: Theme.of(context).textTheme.titleMedium,
+                        child: const Text(
+                          'Create Group',
+                        ),
+                        onTap: () => Future(
+                          () => Navigator.pushNamed(
+                              context, CreateGroupScreen.routeName),
+                        ),
                       ),
-                      onTap: () {})
-              ],
+                      PopupMenuItem(
+                          textStyle: Theme.of(context).textTheme.bodySmall,
+                          child: const Text(
+                            'Settings',
+                          ),
+                          onTap: () {})
+                    ],
+                  ),
+                ],
+              1 => [
+                  IconButton(
+                    icon: Icon(Icons.add_a_photo_rounded,
+                        color: Theme.of(context).colorScheme.onPrimary),
+                    onPressed: () async {
+                      File? pickedImage = await pickImageFromGallery(context);
+                      if (pickedImage != null) {
+                        if (!context.mounted) return;
+                        Navigator.pushNamed(
+                          context,
+                          ConfirmStatusScreen.routeName,
+                          arguments: pickedImage,
+                        );
+                      }
+                    },
+                  ),
+                  PopupMenuButton(
+                    icon: Icon(
+                      Icons.more_vert,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                    itemBuilder: (context) => [
+                      PopupMenuItem(
+                          textStyle: Theme.of(context).textTheme.bodySmall,
+                          child: const Text(
+                            'Settings',
+                          ),
+                          onTap: () {})
+                    ],
+                  ),
+                ],
+              int() => null,
+            }),
+        body: _widgetOptions.elementAt(_selectedIndex),
+        bottomNavigationBar: NavigationBar(
+          onDestinationSelected: _onItemTapped,
+          indicatorColor: const Color.fromARGB(255, 140, 140, 140),
+          selectedIndex: _selectedIndex,
+          destinations: const <Widget>[
+            NavigationDestination(
+              selectedIcon: Icon(Icons.chat),
+              icon: Icon(Icons.chat_outlined),
+              label: 'CHAT',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.auto_awesome_sharp),
+              icon: Icon(Icons.auto_awesome_outlined),
+              label: 'STATUS',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.settings),
+              icon: Icon(Icons.settings_outlined),
+              label: 'SETTINGS',
             ),
           ],
         ),
-        body: _widgetOptions.elementAt(_selectedIndex),
-        bottomNavigationBar: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
-          notchMargin: 10,
-          color: Theme.of(context).colorScheme.primary,
-          child: IconTheme(
-            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-            child: Row(
-              children: <Widget>[
-                IconButton(
-                  iconSize: 25,
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  tooltip: 'CHAT',
-                  icon: Icon(Icons.chat_outlined,
-                      color: _selectedIndex == 0
-                          ? const Color.fromARGB(255, 0, 0, 0)
-                          : Theme.of(context).colorScheme.onPrimary),
-                  onPressed: () {
-                    _onItemTapped(0);
-                  },
-                ),
-                const Spacer(),
-                IconButton(
-                  iconSize: 25,
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  tooltip: 'Status',
-                  icon: Icon(Icons.auto_awesome_sharp,
-                      color: _selectedIndex == 1
-                          ? const Color.fromARGB(255, 0, 0, 0)
-                          : Theme.of(context).colorScheme.onPrimary),
-                  onPressed: () {
-                    _onItemTapped(1);
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.miniCenterDocked,
         floatingActionButton: switch (_selectedIndex) {
-          0 => FloatingActionButton.large(
+          0 => FloatingActionButton(
               shape: Theme.of(context).floatingActionButtonTheme.shape,
               elevation: Theme.of(context).floatingActionButtonTheme.elevation,
               onPressed: () async {
@@ -152,7 +167,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                 color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
-          1 => FloatingActionButton.large(
+          1 => FloatingActionButton(
               shape: Theme.of(context).floatingActionButtonTheme.shape,
               elevation: Theme.of(context).floatingActionButtonTheme.elevation,
               onPressed: () async {

@@ -38,7 +38,7 @@ class MyMessageCard extends StatelessWidget {
             maxWidth: MediaQuery.of(context).size.width - 45,
           ),
           child: Card(
-            elevation: 15,
+            elevation: 10,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             color: Theme.of(context).colorScheme.primary,
@@ -51,7 +51,7 @@ class MyMessageCard extends StatelessWidget {
                           left: 20,
                           right: 30,
                           top: 5,
-                          bottom: 28,
+                          bottom: 25,
                         )
                       : const EdgeInsets.only(
                           left: 5,
@@ -70,7 +70,10 @@ class MyMessageCard extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color:Theme.of(context).colorScheme.background.withOpacity(0.5),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .background
+                                .withOpacity(0.5),
                             borderRadius: const BorderRadius.all(
                               Radius.circular(
                                 5,
@@ -108,8 +111,10 @@ class MyMessageCard extends StatelessWidget {
                       ),
                       Icon(
                         isSeen ? Icons.done_all : Icons.done,
-                        size: 20,
-                        color: isSeen ? const Color.fromARGB(255, 0, 0, 0) : const Color.fromARGB(255, 255, 255, 255),
+                        size: 15,
+                        color: isSeen
+                            ? const Color.fromARGB(255, 0, 0, 0)
+                            : const Color.fromARGB(255, 255, 255, 255),
                       ),
                     ],
                   ),

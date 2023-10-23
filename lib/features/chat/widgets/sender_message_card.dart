@@ -35,7 +35,7 @@ class SenderMessageCard extends StatelessWidget {
             maxWidth: MediaQuery.of(context).size.width - 45,
           ),
           child: Card(
-            elevation: 15,
+            elevation: 10,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             color: Theme.of(context).colorScheme.secondary,
@@ -48,7 +48,7 @@ class SenderMessageCard extends StatelessWidget {
                           left: 10,
                           right: 20,
                           top: 5,
-                          bottom: 28,
+                          bottom: 25,
                         )
                       : const EdgeInsets.only(
                           left: 5,
@@ -70,7 +70,10 @@ class SenderMessageCard extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.background.withOpacity(0.5),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .background
+                                .withOpacity(0.5),
                             borderRadius: const BorderRadius.all(
                               Radius.circular(
                                 5,

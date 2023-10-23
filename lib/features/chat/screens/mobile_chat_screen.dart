@@ -98,27 +98,19 @@ class MobileChatScreen extends ConsumerWidget {
             ),
           ],
         ),
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/background.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(
-            children: [
-              Expanded(
-                child: ChatList(
-                  recieverUserId: uid,
-                  isGroupChat: isGroupChat,
-                ),
-              ),
-              BottomChatField(
+        body: Column(
+          children: [
+            Expanded(
+              child: ChatList(
                 recieverUserId: uid,
                 isGroupChat: isGroupChat,
               ),
-            ],
-          ),
+            ),
+            BottomChatField(
+              recieverUserId: uid,
+              isGroupChat: isGroupChat,
+            ),
+          ],
         ),
       ),
     );

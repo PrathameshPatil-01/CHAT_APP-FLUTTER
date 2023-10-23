@@ -52,14 +52,14 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
 
   void sendTextMessage() async {
     if (isShowSendButton) {
-      if(_messageController.text.trim()!=""){
-      ref.read(chatControllerProvider).sendTextMessage(
-            context,
-            _messageController.text.trim(),
-            widget.recieverUserId,
-            widget.isGroupChat,
-          );
-          }
+      if (_messageController.text.trim() != "") {
+        ref.read(chatControllerProvider).sendTextMessage(
+              context,
+              _messageController.text.trim(),
+              widget.recieverUserId,
+              widget.isGroupChat,
+            );
+      }
       setState(() {
         _messageController.text = '';
       });
@@ -185,7 +185,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                   filled: true,
                   fillColor: Theme.of(context).colorScheme.primaryContainer,
                   prefixIcon: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 3.0),
                     child: SizedBox(
                       width: 100,
                       child: Row(
@@ -246,7 +246,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                       style: BorderStyle.solid,
                     ),
                   ),
-                  contentPadding: const EdgeInsets.all(13),
+                  contentPadding: const EdgeInsets.all(10),
                 ),
               ),
             ),

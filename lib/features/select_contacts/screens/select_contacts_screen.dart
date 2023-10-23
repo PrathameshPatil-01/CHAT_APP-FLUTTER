@@ -86,7 +86,7 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
                           ),
                           leading: contact.photo == null
                               ? const Icon(
-                                  Icons.person_outline_sharp,
+                                  Icons.account_circle,
                                 )
                               : CircleAvatar(
                                   backgroundImage: MemoryImage(contact.photo!),
@@ -111,7 +111,7 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
                             style: Theme.of(context).textTheme.titleSmall,
                           ),
                           leading: contact.photo == null
-                              ? null
+                              ? const Icon(Icons.account_circle)
                               : CircleAvatar(
                                   backgroundImage: MemoryImage(contact.photo!),
                                   radius: 30,
@@ -135,7 +135,7 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
             child: ListTile(
               title: Text(
                 "Create Group",
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               leading: const Icon(
                 Icons.group_add_outlined,
