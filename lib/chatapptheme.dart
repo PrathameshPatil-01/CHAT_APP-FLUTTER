@@ -53,6 +53,15 @@ class ChatAppTheme {
         color: Color.fromRGBO(0, 0, 0, 1),
         fontSize: 14.0,
       ),
+      labelLarge: TextStyle(
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
+      ),
+      labelMedium: TextStyle(
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontSize: 20.0,
+      ),
     ),
 
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -115,6 +124,15 @@ class ChatAppTheme {
         fontWeight: FontWeight.bold,
         color: Color.fromRGBO(255, 255, 255, 1),
         fontSize: 14.0,
+      ),
+      labelLarge: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
+      ),
+      labelMedium: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+        fontSize: 18.0,
       ),
     ),
 

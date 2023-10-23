@@ -8,6 +8,7 @@ import 'package:chatapp_prathamesh/features/chat/screens/mobile_chat_screen.dart
 import 'package:chatapp_prathamesh/features/group/screens/create_group_screen.dart';
 import 'package:chatapp_prathamesh/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:chatapp_prathamesh/features/status/screens/confirm_status_screen.dart';
+import 'package:chatapp_prathamesh/features/settings/screen/settings.dart';
 import 'package:chatapp_prathamesh/features/status/screens/status_screen.dart';
 import 'package:chatapp_prathamesh/features/search/screen/search.dart';
 import 'package:chatapp_prathamesh/models/status_model.dart';
@@ -69,6 +70,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case CreateGroupScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const CreateGroupScreen(),
+      );
+    case SettingsScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SettingsScreen(),
       );
     default:
       return MaterialPageRoute(

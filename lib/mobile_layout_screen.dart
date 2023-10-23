@@ -6,6 +6,7 @@ import 'package:chatapp_prathamesh/features/chat/widgets/contacts_list.dart';
 import 'package:chatapp_prathamesh/features/group/screens/create_group_screen.dart';
 import 'package:chatapp_prathamesh/features/search/screen/search.dart';
 import 'package:chatapp_prathamesh/features/select_contacts/screens/select_contacts_screen.dart';
+import 'package:chatapp_prathamesh/features/settings/screen/settings.dart';
 import 'package:chatapp_prathamesh/features/status/screens/confirm_status_screen.dart';
 import 'package:chatapp_prathamesh/features/status/screens/status_contacts_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   static const List<Widget> _widgetOptions = <Widget>[
     ContactsList(),
     StatusContactsScreen(),
-    Text("great"),
+    SettingsScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -55,7 +56,9 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+        appBar: _selectedIndex==2?
+        null:
+        AppBar(
             foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             centerTitle: false,
@@ -93,7 +96,9 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                           child: const Text(
                             'Settings',
                           ),
-                          onTap: () {})
+                          onTap: () {
+                            Navigator.pushNamed(context, SettingsScreen.routeName);
+                          })
                     ],
                   ),
                 ],
@@ -124,7 +129,9 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                           child: const Text(
                             'Settings',
                           ),
-                          onTap: () {})
+                          onTap: () {
+                            Navigator.pushNamed(context, SettingsScreen.routeName);
+                          })
                     ],
                   ),
                 ],

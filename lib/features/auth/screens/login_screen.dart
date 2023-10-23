@@ -1,10 +1,8 @@
+import 'package:chatapp_prathamesh/common/utils/utils.dart';
+import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:chatapp_prathamesh/common/utils/colors.dart';
-import 'package:chatapp_prathamesh/common/utils/utils.dart';
-import 'package:chatapp_prathamesh/common/widgets/custom_button.dart';
-import 'package:chatapp_prathamesh/features/auth/controller/auth_controller.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   static const routeName = '/login-screen';
@@ -26,6 +24,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   void pickCountry() {
     showCountryPicker(
+      countryListTheme: CountryListThemeData(
+        searchTextStyle: Theme.of(context).textTheme.labelMedium,
+      ),
         context: context,
         onSelect: (Country c) {
           setState(() {
@@ -50,51 +51,83 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Enter your phone number'),
-        elevation: 0,
-        backgroundColor: backgroundColor,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text('WhatsApp will need to verify your phone number.'),
-              const SizedBox(height: 10),
-              TextButton(
-                onPressed: pickCountry,
-                child: const Text('Pick Country'),
-              ),
-              const SizedBox(height: 5),
-              Row(
+        appBar: AppBar(
+            title: const Text('Enter your phone number'),
+            elevation: 0,
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  if (country != null) Text('+${country!.phoneCode}'),
-                  const SizedBox(width: 10),
-                  SizedBox(
-                    width: size.width * 0.7,
-                    child: TextField(
-                      controller: phoneController,
-                      decoration: const InputDecoration(
-                        hintText: 'phone number',
+                  Text(
+                    'Please verify your phone number.',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  const SizedBox(height: 10),
+                  TextButton(
+                    onPressed: pickCountry,
+                    child: const Text(
+                      'Pick Country',
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if (country != null)
+                        Text(
+                          '+${country!.phoneCode}',
+                          style: Theme.of(context).textTheme.labelMedium,
+                        )
+                      else
+                        const Icon(Icons.public_sharp),
+                      const SizedBox(width: 10),
+                      SizedBox(
+                        width: size.width * 0.6,
+                        child: TextField(
+                          style: Theme.of(context).textTheme.labelMedium,
+                          keyboardType: TextInputType.number,
+                          controller: phoneController,
+                          decoration: InputDecoration(
+                            hintText: 'phone number',
+                            hintStyle: Theme.of(context).textTheme.labelMedium,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: size.height * 0.6),
+                  SizedBox(
+                    width: 140, // Adjust the button width as needed
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Theme.of(context).colorScheme.tertiary,
+                        foregroundColor: Theme.of(context)
+                            .colorScheme
+                            .onTertiary, // Set button color
+                        textStyle: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        padding: const EdgeInsets.all(15), // Set button padding
+                      ),
+                      onPressed: sendPhoneNumber,
+                      child: const Text('NEXT'),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: size.height * 0.6),
-              SizedBox(
-                width: 90,
-                child: CustomButton(
-                  onPressed: sendPhoneNumber,
-                  text: 'NEXT',
-                ),
-              ),
-            ],
+            ),
           ),
         ),
-      ),
     );
   }
 }
