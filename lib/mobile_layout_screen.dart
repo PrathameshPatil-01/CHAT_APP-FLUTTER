@@ -64,7 +64,9 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             centerTitle: false,
             title: Text(
               'ChatApp',
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Theme.of(context).appBarTheme.foregroundColor,
+                  ),
             ),
             actions: switch (_selectedIndex) {
               0 => [
@@ -140,7 +142,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
         body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: _onItemTapped,
-          indicatorColor: const Color.fromARGB(255, 140, 140, 140),
+          indicatorColor: const Color.fromARGB(130, 255, 46, 99),
           selectedIndex: _selectedIndex,
           destinations: const <Widget>[
             NavigationDestination(

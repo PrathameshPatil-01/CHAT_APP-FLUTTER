@@ -42,7 +42,9 @@ class MobileChatScreen extends ConsumerWidget {
           title: isGroupChat
               ? Text(
                   name,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: Theme.of(context).appBarTheme.foregroundColor,
+                      ),
                 )
               : StreamBuilder<UserModel>(
                   stream: ref.read(authControllerProvider).userDataById(uid),
@@ -55,7 +57,12 @@ class MobileChatScreen extends ConsumerWidget {
                       children: [
                         Text(
                           name,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    color: Theme.of(context)
+                                        .appBarTheme
+                                        .foregroundColor,
+                                  ),
                         ),
                         Row(
                           children: [

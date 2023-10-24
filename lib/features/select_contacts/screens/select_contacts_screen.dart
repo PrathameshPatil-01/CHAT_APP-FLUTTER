@@ -47,7 +47,9 @@ class SelectContactsScreenState extends ConsumerState<SelectContactsScreen> {
           : AppBar(
               title: Text(
                 'Select contact',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      color: Theme.of(context).appBarTheme.foregroundColor,
+                    ),
               ),
               actions: [
                 IconButton(

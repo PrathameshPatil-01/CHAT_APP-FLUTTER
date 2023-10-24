@@ -29,24 +29,27 @@ class ChatAppTheme {
     // Text Theme
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 24.0,
-      ),
-      titleMedium: TextStyle(
+        color: Color.fromRGBO(0, 0, 0, 1),
         fontWeight: FontWeight.bold,
         fontSize: 22.0,
       ),
-      titleSmall: TextStyle(
+      titleMedium: TextStyle(
         color: Color.fromRGBO(0, 0, 0, 1),
         fontWeight: FontWeight.bold,
         fontSize: 20.0,
       ),
+      titleSmall: TextStyle(
+        color: Color.fromRGBO(0, 0, 0, 1),
+        fontWeight: FontWeight.bold,
+        fontSize: 18.0,
+      ),
       bodyLarge: TextStyle(
+        color: Color.fromRGBO(0, 0, 0, 1),
         fontSize: 18.0,
       ),
       bodyMedium: TextStyle(
         color: Color.fromRGBO(0, 0, 0, 1),
-        fontSize: 16.0,
+        fontSize: 17.0,
       ),
       bodySmall: TextStyle(
         fontWeight: FontWeight.bold,
@@ -56,11 +59,11 @@ class ChatAppTheme {
       labelLarge: TextStyle(
         color: Color.fromRGBO(0, 0, 0, 1),
         fontWeight: FontWeight.bold,
-        fontSize: 22.0,
+        fontSize: 17.0,
       ),
       labelMedium: TextStyle(
         color: Color.fromRGBO(0, 0, 0, 1),
-        fontSize: 20.0,
+        fontSize: 15.0,
       ),
     ),
 
@@ -101,24 +104,27 @@ class ChatAppTheme {
     // Text Theme
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 24.0,
-      ),
-      titleMedium: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
         fontWeight: FontWeight.bold,
         fontSize: 22.0,
+      ),
+      titleMedium: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+        fontWeight: FontWeight.bold,
+        fontSize: 20.0,
       ),
       titleSmall: TextStyle(
         fontWeight: FontWeight.bold,
         color: Color.fromRGBO(255, 255, 255, 1),
-        fontSize: 20.0,
+        fontSize: 18.0,
       ),
       bodyLarge: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
         fontSize: 18.0,
       ),
       bodyMedium: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
-        fontSize: 16.0,
+        fontSize: 17.0,
       ),
       bodySmall: TextStyle(
         fontWeight: FontWeight.bold,
@@ -128,11 +134,11 @@ class ChatAppTheme {
       labelLarge: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
         fontWeight: FontWeight.bold,
-        fontSize: 22.0,
+        fontSize: 17.0,
       ),
       labelMedium: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
-        fontSize: 18.0,
+        fontSize: 15.0,
       ),
     ),
 
