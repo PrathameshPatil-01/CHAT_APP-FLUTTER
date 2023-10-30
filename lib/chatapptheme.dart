@@ -59,11 +59,11 @@ class ChatAppTheme {
       labelLarge: TextStyle(
         color: Color.fromRGBO(0, 0, 0, 1),
         fontWeight: FontWeight.bold,
-        fontSize: 17.0,
+        fontSize: 18.0,
       ),
       labelMedium: TextStyle(
         color: Color.fromRGBO(0, 0, 0, 1),
-        fontSize: 15.0,
+        fontSize: 16.0,
       ),
     ),
 
@@ -134,12 +134,25 @@ class ChatAppTheme {
       labelLarge: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
         fontWeight: FontWeight.bold,
-        fontSize: 17.0,
+        fontSize: 18.0,
       ),
       labelMedium: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
-        fontSize: 15.0,
+        fontSize: 16.0,
       ),
+      labelSmall: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+      ),
+      displayLarge: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+      ),
+      displayMedium: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+      ),
+      displaySmall: TextStyle(
+        color: Color.fromRGBO(255, 255, 255, 1),
+      ),
+
     ),
 
     floatingActionButtonTheme: const FloatingActionButtonThemeData(

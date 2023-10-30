@@ -30,12 +30,12 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
       case AppLifecycleState.resumed:
         ref.read(authControllerProvider).setUserState(true);
         break;
+      case AppLifecycleState.hidden:
       case AppLifecycleState.inactive:
       case AppLifecycleState.detached:
       case AppLifecycleState.paused:
         ref.read(authControllerProvider).setUserState(false);
         break;
-      case AppLifecycleState.hidden:
     }
   }
 
@@ -63,7 +63,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             centerTitle: false,
             title: Text(
-              'ChatApp',
+              'Chat App',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: Theme.of(context).appBarTheme.foregroundColor,
                   ),

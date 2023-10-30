@@ -58,8 +58,6 @@ class DisplayTextImageGIF extends StatelessWidget {
                         imageUrl: message,
                       )
                     : CachedNetworkImage(
-                        height:150,
-                        width: 150,
                         imageUrl: message,
                       );
   }

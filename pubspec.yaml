@@ -43,7 +43,7 @@ dependencies:
   country_picker: ^2.0.21
   image_picker: ^1.0.4
   enough_giphy_flutter: ^0.4.1
-  flutter_contacts: ^1.1.7+1
+  flutter_contacts: any
   uuid: any
   emoji_picker_flutter: ^1.6.2
   path_provider: ^2.1.1

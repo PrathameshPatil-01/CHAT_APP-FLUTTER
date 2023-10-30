@@ -116,20 +116,20 @@ class StatusRepository {
   Future<List<Status>> getStatus(BuildContext context) async {
     List<Status> statusData = [];
     try {
-      List<Contact> contacts = [];
-      if (await FlutterContacts.requestPermission()) {
-        contacts = await FlutterContacts.getContacts(withProperties: true);
-      }
-      for (int i = 0; i < contacts.length; i++) {
+      // List<Contact> contacts = [];
+      // if (await FlutterContacts.requestPermission()) {
+      //   contacts = await FlutterContacts.getContacts(withProperties: true);
+      // }
+      // for (int i = 0; i < contacts.length; i++) {
         var statusesSnapshot = await firestore
             .collection('status')
-            .where(
-              'phoneNumber',
-              isEqualTo: contacts[i].phones[0].number.replaceAll(
-                    ' ',
-                    '',
-                  ),
-            )
+            // .where(
+            //   'phoneNumber',
+            //   isEqualTo: contacts[i].phones[0].number.replaceAll(
+            //         ' ',
+            //         '',
+            //       ),
+            // )
             // .where(
             //   'createdAt',
             //   isGreaterThan: DateTime.now()
@@ -137,16 +137,20 @@ class StatusRepository {
             //       .millisecondsSinceEpoch,
             // )
             .get();
-        for (var tempData in statusesSnapshot.docs) {
-          Status tempStatus = Status.fromMap(tempData.data());
-          if (tempStatus.whoCanSee.contains(auth.currentUser!.uid)) {
-            statusData.add(tempStatus);
+        if (statusesSnapshot.docs.isNotEmpty) {
+          for (var tempData in statusesSnapshot.docs) {
+            Status tempStatus = Status.fromMap(tempData.data());
+            // if (tempStatus.whoCanSee.contains(auth.currentUser!.uid)) {
+              statusData.add(tempStatus);
+            // }
           }
         }
-      }
+      // }
     } catch (e) {
       if (kDebugMode) print(e);
-      if(context.mounted){showSnackBar(context: context, content: e.toString());}
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.toString());
+      }
     }
     return statusData;
   }

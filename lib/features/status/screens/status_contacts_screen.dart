@@ -17,6 +17,7 @@ class StatusContactsScreen extends ConsumerWidget {
           return const Loader();
         }
         return ListView.builder(
+          padding: const EdgeInsets.only(top: 10.0),
           itemCount: snapshot.data!.length,
           itemBuilder: (context, index) {
             var statusData = snapshot.data![index];
