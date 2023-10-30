@@ -12,13 +12,16 @@ A feature-rich chat application built using Flutter with Firebase integration an
 
 ## Table of Contents
 
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Repository Structure](#repository-structure)
-- [Planned Enhancements](#planned-enhancements)
-- [Teck Stack](#tech-stack)
-- [Installation ](#installation)
-- [Contributions](#contributions)
+- [Flutter Chat App](#flutter-chat-app)
+  - [Live Demo](#live-demo)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Screenshots](#screenshots)
+  - [Repository Structure](#repository-structure)
+  - [Planned Enhancements](#planned-enhancements)
+  - [Tech Stack](#tech-stack)
+  - [Installation](#installation)
+  - [Contributions](#contributions)
 
 ---
 
@@ -50,47 +53,47 @@ A feature-rich chat application built using Flutter with Firebase integration an
 
 | ![Screen](screenshots/l1.png)       | ![Screen](screenshots/l2.png)             | ![Screen](screenshots/l3.png)         |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/d1.png)       | ![Screen](screenshots/d2.png)             | ![Screen](screenshots/d3.png)         |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/l4.png)       | ![Screen](screenshots/l5.png)             | ![Screen](screenshots/l6.png)         |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/d4.png)       | ![Screen](screenshots/d5.png)             | ![Screen](screenshots/d6.png)         |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/l7.png)       | ![Screen](screenshots/l8.png)             | ![Screen](screenshots/l9.png)         |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/d7.png)       | ![Screen](screenshots/d8.png)             | ![Screen](screenshots/d9.png)         |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/l10.png)       | ![Screen](screenshots/l11.png)             | ![Screen](screenshots/l12.png)      |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/d10.png)       | ![Screen](screenshots/d11.png)             | ![Screen](screenshots/d12.png)      |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/l13.png)       | ![Screen](screenshots/l14.png)             | ![Screen](screenshots/l15.png)      |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/d13.png)       | ![Screen](screenshots/d14.png)             | ![Screen](screenshots/d15.png)      |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 | ![Screen](screenshots/vc1.png)       | ![Screen](screenshots/vc2.png)             | ![Screen](screenshots/vc3.png)      |
 | :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            Start Screen             |            Question Screen                |             Results Screen            |
+|            **********             |            **********                |             **********            |
 
 ---
 
