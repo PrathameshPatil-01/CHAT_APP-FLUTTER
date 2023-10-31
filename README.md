@@ -6,7 +6,7 @@ A feature-rich chat application built using Flutter with Firebase integration an
 
 ## Live Demo
 
-<img src="screenshots/exp-tracker.gif" alt="Live Demo" width="450" height="650">
+<img src="screenshots/Chat_App.gif" alt="Live Demo">
 
 ---
 
