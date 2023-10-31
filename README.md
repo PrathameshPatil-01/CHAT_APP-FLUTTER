@@ -53,47 +53,37 @@ A feature-rich chat application built using Flutter with Firebase integration an
 
 | ![Screen](screenshots/l1.png) | ![Screen](screenshots/l2.png) | ![Screen](screenshots/l3.png) |
 | :---------------------------: | :---------------------------: | :---------------------------: |
-|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
-
+|       **Login Screen**        |       **OTP Screen**        |       **Create Profile**        |
 | ![Screen](screenshots/d1.png) | ![Screen](screenshots/d2.png) | ![Screen](screenshots/d3.png) |
-| :---------------------------: | :---------------------------: | :---------------------------: |
-|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
+---
 
 | ![Screen](screenshots/l4.png) | ![Screen](screenshots/l5.png) | ![Screen](screenshots/l6.png) |
 | :---------------------------: | :---------------------------: | :---------------------------: |
-|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
-
+|       **Home Screen**        |       **Search Screen**        |       **Pop Menus**        |
 | ![Screen](screenshots/d4.png) | ![Screen](screenshots/d5.png) | ![Screen](screenshots/d6.png) |
-| :---------------------------: | :---------------------------: | :---------------------------: |
-|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
+---
 
 | ![Screen](screenshots/l7.png) | ![Screen](screenshots/l8.png) | ![Screen](screenshots/l9.png) |
 | :---------------------------: | :---------------------------: | :---------------------------: |
-|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
-
+|       **Select Contacts**        |       **Create Group**        |       **Settings Screen**  |
 | ![Screen](screenshots/d7.png) | ![Screen](screenshots/d8.png) | ![Screen](screenshots/d9.png) |
-| :---------------------------: | :---------------------------: | :---------------------------: |
-|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
+---
 
 | ![Screen](screenshots/l10.png) | ![Screen](screenshots/l11.png) | ![Screen](screenshots/l12.png) |
 | :----------------------------: | :----------------------------: | :----------------------------: |
-|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
-
+|        **Status Screen**        |        **Add Status**        |        **Status Updated**        |
 | ![Screen](screenshots/d10.png) | ![Screen](screenshots/d11.png) | ![Screen](screenshots/d12.png) |
-| :----------------------------: | :----------------------------: | :----------------------------: |
-|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
+---
 
 | ![Screen](screenshots/l13.png) | ![Screen](screenshots/l14.png) | ![Screen](screenshots/l15.png) |
 | :----------------------------: | :----------------------------: | :----------------------------: |
-|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
-
+|        **Chat Screen**        |        **Creating Group**        |        **Group Created**      |
 | ![Screen](screenshots/d13.png) | ![Screen](screenshots/d14.png) | ![Screen](screenshots/d15.png) |
-| :----------------------------: | :----------------------------: | :----------------------------: |
-|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
+---
 
 | ![Screen](screenshots/vc1.png) | ![Screen](screenshots/vc2.png) | ![Screen](screenshots/vc3.png) |
 | :----------------------------: | :----------------------------: | :----------------------------: |
-|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
+|        **Video Call Screen**   |       **Video Call Screen**    |        **Video Call Screen**   |
 
 ---
 
