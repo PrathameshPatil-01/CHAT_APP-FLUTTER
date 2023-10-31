@@ -51,49 +51,49 @@ A feature-rich chat application built using Flutter with Firebase integration an
 <img src="screenshots/logo.png" alt="Screen" width="300" height="600">
 </div>
 
-| ![Screen](screenshots/l1.png)       | ![Screen](screenshots/l2.png)             | ![Screen](screenshots/l3.png)         |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/l1.png) | ![Screen](screenshots/l2.png) | ![Screen](screenshots/l3.png) |
+| :---------------------------: | :---------------------------: | :---------------------------: |
+|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/d1.png)       | ![Screen](screenshots/d2.png)             | ![Screen](screenshots/d3.png)         |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/d1.png) | ![Screen](screenshots/d2.png) | ![Screen](screenshots/d3.png) |
+| :---------------------------: | :---------------------------: | :---------------------------: |
+|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/l4.png)       | ![Screen](screenshots/l5.png)             | ![Screen](screenshots/l6.png)         |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/l4.png) | ![Screen](screenshots/l5.png) | ![Screen](screenshots/l6.png) |
+| :---------------------------: | :---------------------------: | :---------------------------: |
+|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/d4.png)       | ![Screen](screenshots/d5.png)             | ![Screen](screenshots/d6.png)         |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/d4.png) | ![Screen](screenshots/d5.png) | ![Screen](screenshots/d6.png) |
+| :---------------------------: | :---------------------------: | :---------------------------: |
+|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/l7.png)       | ![Screen](screenshots/l8.png)             | ![Screen](screenshots/l9.png)         |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/l7.png) | ![Screen](screenshots/l8.png) | ![Screen](screenshots/l9.png) |
+| :---------------------------: | :---------------------------: | :---------------------------: |
+|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/d7.png)       | ![Screen](screenshots/d8.png)             | ![Screen](screenshots/d9.png)         |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/d7.png) | ![Screen](screenshots/d8.png) | ![Screen](screenshots/d9.png) |
+| :---------------------------: | :---------------------------: | :---------------------------: |
+|       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |       \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/l10.png)       | ![Screen](screenshots/l11.png)             | ![Screen](screenshots/l12.png)      |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/l10.png) | ![Screen](screenshots/l11.png) | ![Screen](screenshots/l12.png) |
+| :----------------------------: | :----------------------------: | :----------------------------: |
+|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/d10.png)       | ![Screen](screenshots/d11.png)             | ![Screen](screenshots/d12.png)      |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/d10.png) | ![Screen](screenshots/d11.png) | ![Screen](screenshots/d12.png) |
+| :----------------------------: | :----------------------------: | :----------------------------: |
+|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/l13.png)       | ![Screen](screenshots/l14.png)             | ![Screen](screenshots/l15.png)      |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/l13.png) | ![Screen](screenshots/l14.png) | ![Screen](screenshots/l15.png) |
+| :----------------------------: | :----------------------------: | :----------------------------: |
+|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/d13.png)       | ![Screen](screenshots/d14.png)             | ![Screen](screenshots/d15.png)      |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/d13.png) | ![Screen](screenshots/d14.png) | ![Screen](screenshots/d15.png) |
+| :----------------------------: | :----------------------------: | :----------------------------: |
+|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
 
-| ![Screen](screenshots/vc1.png)       | ![Screen](screenshots/vc2.png)             | ![Screen](screenshots/vc3.png)      |
-| :--------------------------------:  | :---------------------------------------: | :----------------------------------:  |
-|            **********             |            **********                |             **********            |
+| ![Screen](screenshots/vc1.png) | ![Screen](screenshots/vc2.png) | ![Screen](screenshots/vc3.png) |
+| :----------------------------: | :----------------------------: | :----------------------------: |
+|        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |        \***\*\*\*\*\***        |
 
 ---
 
@@ -178,32 +178,35 @@ The app leverages a variety of technologies to provide a rich and interactive us
 ## Installation
 
 1. **Clone the Repository**:
+
    ```
    git clone https://github.com/PrathameshPatil-01/CHAT_APP-FLUTTER.git
    ```
 
 2. **Install Dependencies**:
+
    ```
    flutter pub get
    ```
 
 3. **Configure Firebase**:
+
    - Create a new project on the [Firebase Console](https://console.firebase.google.com/).
-   - Follow the instructions to set up Firebase in your Flutter project by adding the necessary configuration files. 
+   - Follow the instructions to set up Firebase in your Flutter project by adding the necessary configuration files.
    - Run the commands:
-      - npm install -g firebase-tools
-      - dart pub global activate flutterfire_cli
-      - flutterfire configure
+     - npm install -g firebase-tools
+     - dart pub global activate flutterfire_cli
+     - flutterfire configure
    - Enable Authentication
    - Add Firestore & Storage Rules
    - Create Android & iOS Apps
 
 4. **Run the App**:
-    ```bash
-      flutter pub get
-      open -a simulator (to get iOS Simulator)
-      flutter run
-    ```
+   ```bash
+     flutter pub get
+     open -a simulator (to get iOS Simulator)
+     flutter run
+   ```
 
 ---
 
