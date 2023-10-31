@@ -1,6 +1,6 @@
 # Flutter Chat App
 
-A feature-rich chat application built using Flutter with Firebase integration and utilizes Riverpod for state management. This app allows users to authenticate with their mobile number, enabling them to chat with their contacts, share emojis, GIFs, images, videos, and audio recordings. It also supports group chat functionality, along with both person-to-person and group video calling. Users can set profile pictures, view online/offline status, and see real-time message timestamps. Additionally, users can add statuses, similar to WhatsApp.
+A feature-rich chat application built using **Flutter** with **Firebase** integration and utilizes **Riverpod** for state management. This app allows users to authenticate with their mobile number, enabling them to chat with their contacts, share emojis, GIFs, images, videos, and audio recordings. It also supports group chat functionality, along with both person-to-person and group video calling. Users can set profile pictures, view online/offline status, and see real-time message timestamps. Additionally, users can add statuses, similar to WhatsApp.
 
 ---
 
