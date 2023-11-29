@@ -4,16 +4,16 @@ A feature-rich chat application built using **Flutter** with **Firebase** integr
 
 ---
 
-## Live Demo
+## Demo
 
-<img src="screenshots/Chat_App.gif" alt="Live Demo">
+<img src="screenshots/Chat_App.gif" alt="Demo">
 
 ---
 
 ## Table of Contents
 
 - [Flutter Chat App](#flutter-chat-app)
-  - [Live Demo](#live-demo)
+  - [Demo](#demo)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Screenshots](#screenshots)
